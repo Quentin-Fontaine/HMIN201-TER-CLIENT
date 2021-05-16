@@ -25,15 +25,12 @@
       </li>
     </ul>
 
-    <form *ngIf='!(user|async)' class='form-inline my-2 my-lg-0' >
+    <form *ngIf='!auth.isAuth$.getValue()' class='form-inline my-2 my-lg-0' >
       <a class='btn btn-info mr-2' routerLink='/membres/inscription' role='button'>S'inscrire</a>
       <a class='btn btn-light' routerLink='/membres/connexion' role='button'>Se connecter</a>
     </form>
-    <form *ngIf='(user|async)' class='form-inline my-2 my-lg-0' >
-      <a class="btn btn-warning mr-2" routerLink="/panier">
-        <i class="bi bi-basket2-fill"></i>
-      </a>
-      <a class='btn btn-light' (click)='deconnexion()' role='button'>Se déconnecter ({{user|async}})</a>
+    <form *ngIf='auth.isAuth$.getValue()' class='form-inline my-2 my-lg-0' >
+      <a class='btn btn-light' (click)='onLogout()' role='button'>Se déconnecter ({{ auth.memberId }})</a>
     </form>
   </div>
 </nav>

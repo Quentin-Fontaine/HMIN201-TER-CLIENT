@@ -15,9 +15,9 @@ import { AvisComponent } from './avis/avis.component';
 import { GestionComponent } from './gestion/gestion.component';
 import { AddHotelComponent } from './add-hotel/add-hotel.component';
 
-import { AuthService } from './services/auth.service';
-import { HotelService } from './services/hotel.service';
-import { MemberService } from './services/member.service';
+import { AuthService } from './_services/auth.service';
+import { HotelService } from './_services/hotel.service';
+import { MemberService } from './_services/member.service';
 
 @NgModule({
   declarations: [

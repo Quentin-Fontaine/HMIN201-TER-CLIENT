@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Hotel } from '../models/hotel.model';
+import { Hotel } from '../_models/hotel.model';
 import { Subject } from 'rxjs';
-import { Opinion } from '../models/opinion.model';
+import { Opinion } from '../_models/opinion.model';
 
 @Injectable({
   providedIn: 'root'
@@ -63,7 +63,21 @@ export class HotelService {
         });
   }
 
-  private emitOpinion(): void {
+  emitOpinion(): void {
     this.opinion$.next(this.opinions);
+  }
+
+  createNewHotel(hotel: Hotel) {
+    return new Promise((resolve, reject) => {
+      this.http.post('http://localhost:8888/api/hotels', hotel)
+        .subscribe(
+          (response) => {
+            resolve(response);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+    });
   }
 }

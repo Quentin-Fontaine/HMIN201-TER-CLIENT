@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../_services/auth.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -11,18 +11,18 @@ import {Router} from '@angular/router';
 export class MenuComponent implements OnInit {
   public user: Observable<string>;
 
-  constructor(private authService: AuthService, private router: Router) {
-    // this.user = this.authService.getUser();
+  constructor(private auth: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.router.navigate(['/hotels']);
+    console.log(this.auth.isAuth$.getValue());
   }
 
-  // tslint:disable-next-line:typedef
-  deconnexion() {
-    this.authService.logout();
+  onLogout(): void {
+    this.auth.logout();
     this.router.navigate(['/hotels']);
+    console.log(this.auth);
   }
 
 }

@@ -5,12 +5,12 @@
     <h3 class="text-center">ARBRE</h3>
   </div>
 
-  <form class="mt-5 pb-5 border-bottom border-dark">
+  <form [formGroup]="opinionForm" class="mt-5 pb-5 border-bottom border-dark">
     <div class="mb-3">
       <label for="avisTextArea" class="form-label">Donner votre avis</label>
-      <textarea class="form-control w-75" id="avisTextArea" rows="3" placeholder="La chambre est très confortable..."></textarea>
+      <textarea required formControlName="text" class="form-control w-75" id="avisTextArea" rows="3" placeholder="La chambre est très confortable..."></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Valider</button>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Valider</button>
   </form>
 
   <div class="mt-5">
@@ -18,7 +18,7 @@
     <ul class="w-75 mx-auto list-group list-group-flush">
 
       <li *ngFor="let opinion of opinions" class="list-group-item mt-3">
-        <p class="text-success">{{ getMemberName(opinion.writer) }}</p>
+        <p class="text-success">{{ opinion.writer }}</p>
         "{{ opinion.text }}"
       </li>
 

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Hotel } from '../models/hotel.model';
+import { Hotel } from '../_models/hotel.model';
 import { Observable, Subscription } from 'rxjs';
-import { HotelService } from '../services/hotel.service';
+import { HotelService } from '../_services/hotel.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Member } from '../models/member.model';
+import { Member } from '../_models/member.model';
 import { Subscription } from 'rxjs';
-import { MemberService } from '../services/member.service';
+import { MemberService } from '../_services/member.service';
 import { Router } from '@angular/router';
 
 @Component({
