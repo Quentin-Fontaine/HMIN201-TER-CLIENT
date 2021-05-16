@@ -1,81 +1,16 @@
 <div class="row row-cols-1 row-cols-md-5 g-4">
 
-  <div class="col my-2">
+  <div class="col my-2" *ngFor="let hotel of hotels">
     <div class="card h-100">
       <div class="card-body">
-        <h5 class="card-title">Hôtel 1</h5>
-        <p class="card-text"><small class="text-muted">City</small></p>
-        <p class="card-text">Une description très très très très très très très très très très très très très très très très très très très très très très très très très très très très très très longue !</p>
+        <h5 class="card-title">{{ hotel.name }}</h5>
+        <p class="card-text"><small class="text-muted">{{ hotel.city }}</small></p>
+        <p class="card-text">{{ hotel.description }}</p>
       </div>
       <div class="card-footer w-100  mx-auto">
-        <button routerLink="/hotel" type="button" class="btn btn-info">Voir les infos</button>
+        <button (click)="onHotelClicked(hotel._id)" type="button" class="btn btn-info">Voir les infos</button>
       </div>
     </div>
   </div>
-
-  <div class="col my-2">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Hôtel 2</h5>
-        <p class="card-text"><small class="text-muted">City</small></p>
-        <p class="card-text">Une description quelconque !</p>
-      </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-info">Voir les infos</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col my-2">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Hôtel 3</h5>
-        <p class="card-text"><small class="text-muted">City</small></p>
-        <p class="card-text">Une autre description.</p>
-      </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-info">Voir les infos</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col my-2">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Hôtel 4</h5>
-        <p class="card-text"><small class="text-muted">City</small></p>
-        <p class="card-text">Description courte !</p>
-      </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-info">Voir les infos</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col my-2">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Hôtel 5</h5>
-        <p class="card-text"><small class="text-muted">City</small></p>
-        <p class="card-text">Description pas ouf !</p>
-      </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-info">Voir les infos</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col my-2">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Hôtel 6</h5>
-        <p class="card-text"><small class="text-muted">City</small></p>
-        <p class="card-text">Description courte !</p>
-      </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-info">Voir les infos</button>
-      </div>
-    </div>
-  </div>
-
+<!-- routerLink="/hotel" -->
 </div>

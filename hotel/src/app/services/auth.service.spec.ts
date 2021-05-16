@@ -46,14 +46,14 @@ export class AuthService {
 
 
 // describe('AuthService', () => {
-//   let service: AuthService;
+//   let services: AuthService;
 //
 //   beforeEach(() => {
 //     TestBed.configureTestingModule({});
-//     service = TestBed.inject(AuthService);
+//     services = TestBed.inject(AuthService);
 //   });
 //
 //   it('should be created', () => {
-//     expect(service).toBeTruthy();
+//     expect(services).toBeTruthy();
 //   });
 // });

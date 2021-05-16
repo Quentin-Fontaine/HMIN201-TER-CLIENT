@@ -1,107 +1,23 @@
 <div>
 
-  <div class="container mt-3 border-bottom">
+  <div *ngFor="let member of members" class="container mt-3 border-bottom">
     <div class="row">
-      <div class="col-sm">
-        Pseudo
+      <div class="col-sm-2">
+        {{ member.lastname }}
       </div>
-      <div class="col-sm">
-        Mail
+      <div class="col-sm-2">
+        {{ member.firstname }}
       </div>
-      <div class="col-sm">
-        Rôle
+      <div class="col-sm-4">
+        {{ member.email }}
       </div>
-      <div class="col-sm">
+      <div class="col-sm-2">
+        {{ member.role }}
+      </div>
+      <div class="col-sm-2">
         <button class="btn btn-danger">Supprimer</button>
       </div>
     </div>
   </div>
-
-  <div class="container mt-3 border-bottom">
-    <div class="row">
-      <div class="col-sm">
-        Pseudo
-      </div>
-      <div class="col-sm">
-        Mail
-      </div>
-      <div class="col-sm">
-        Rôle
-      </div>
-      <div class="col-sm">
-        <button class="btn btn-danger align-middle">Supprimer</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-3 border-bottom">
-    <div class="row">
-      <div class="col-sm">
-        Pseudo
-      </div>
-      <div class="col-sm">
-        Mail
-      </div>
-      <div class="col-sm">
-        Rôle
-      </div>
-      <div class="col-sm">
-        <button class="btn btn-danger">Supprimer</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-3 border-bottom">
-    <div class="row">
-      <div class="col-sm">
-        Pseudo
-      </div>
-      <div class="col-sm">
-        Mail
-      </div>
-      <div class="col-sm">
-        Rôle
-      </div>
-      <div class="col-sm">
-        <button class="btn btn-danger">Supprimer</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-3 border-bottom">
-    <div class="row">
-      <div class="col-sm">
-        Pseudo
-      </div>
-      <div class="col-sm">
-        Mail
-      </div>
-      <div class="col-sm">
-        Rôle
-      </div>
-      <div class="col-sm">
-        <button class="btn btn-danger">Supprimer</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-3 border-bottom">
-    <div class="row">
-      <div class="col-sm">
-        Pseudo
-      </div>
-      <div class="col-sm">
-        Mail
-      </div>
-      <div class="col-sm">
-        Rôle
-      </div>
-      <div class="col-sm">
-        <button class="btn btn-danger">Supprimer</button>
-      </div>
-    </div>
-  </div>
-
-
 
 </div>
