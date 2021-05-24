@@ -14,8 +14,36 @@ export class OpinionService {
   private opinions: Opinion[] = [];
   public opinion$ = new Subject<Opinion[]>();
 
-  getAllHotels(): void {
+  getAllOpinions(): void {
     this.http.get('http://localhost:8888/api/opinions')
+      .subscribe(
+        (opinions: Opinion[]) => {
+          if (opinions) {
+            this.opinions = opinions;
+            this.emitOpinion();
+          }
+        },
+        (error) => {
+          console.log(error);
+        });
+  }
+
+  getNotValidatedOpinions(): void {
+    this.http.get('http://localhost:8888/api/opinions/notvalidated')
+      .subscribe(
+        (opinions: Opinion[]) => {
+          if (opinions) {
+            this.opinions = opinions;
+            this.emitOpinion();
+          }
+        },
+        (error) => {
+          console.log(error);
+        });
+  }
+
+  getOwnOpinions(id: string): void {
+    this.http.get('http://localhost:8888/api/members/' + id + '/opinions')
       .subscribe(
         (opinions: Opinion[]) => {
           if (opinions) {
@@ -45,4 +73,31 @@ export class OpinionService {
         );
     });
   }
+
+  modifyOpinion(id: string, opinion: Opinion) {
+    return new Promise((resolve, reject) => {
+      this.http.put('http://localhost:8888/api/opinions/' + id, opinion).subscribe(
+        (response) => {
+          resolve(response);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+  }
+
+  deleteOpinion(id: string) {
+    return new Promise((resolve, reject) => {
+      this.http.delete('http://localhost:8888/api/opinions/' + id).subscribe(
+        (response) => {
+          resolve(response);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+  }
+
 }

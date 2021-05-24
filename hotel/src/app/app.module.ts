@@ -18,6 +18,7 @@ import { AddHotelComponent } from './add-hotel/add-hotel.component';
 import { AuthService } from './_services/auth.service';
 import { HotelService } from './_services/hotel.service';
 import { MemberService } from './_services/member.service';
+import { OwnHotelsComponent } from './own-hotels/own-hotels.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MemberService } from './_services/member.service';
     HotelComponent,
     AvisComponent,
     GestionComponent,
-    AddHotelComponent
+    AddHotelComponent,
+    OwnHotelsComponent
   ],
   imports: [
     BrowserModule,

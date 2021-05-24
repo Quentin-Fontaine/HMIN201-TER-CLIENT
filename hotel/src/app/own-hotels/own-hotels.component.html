@@ -1,3 +1,7 @@
+<div class="center my-3">
+  <button class="btn btn-info" (click)="goAddHotel()">Ajouter un hôtel</button>
+</div>
+
 <div class="row row-cols-1 row-cols-md-5 g-4">
 
   <div class="col my-2" *ngFor="let hotel of hotels">
@@ -8,7 +12,7 @@
         <p class="card-text">{{ hotel.description }}</p>
       </div>
       <div class="card-footer w-100  mx-auto">
-        <button (click)="onHotelClicked(hotel._id)" type="button" class="btn btn-info">Voir les infos</button>
+<!--        <button (click)="onHotelClicked(hotel._id)" type="button" class="btn btn-info">Voir les infos</button>-->
       </div>
     </div>
   </div>

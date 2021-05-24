@@ -7,8 +7,15 @@ import {MembresComponent} from './membres/membres.component';
 import {HotelComponent} from './hotel/hotel.component';
 import {AvisComponent} from './avis/avis.component';
 import {GestionComponent} from './gestion/gestion.component';
+import {MenuComponent} from './menu/menu.component';
+import {OwnHotelsComponent} from './own-hotels/own-hotels.component';
+import {AddHotelComponent} from './add-hotel/add-hotel.component';
 
 const routes: Routes = [
+  {
+    path: 'menu',
+    component: MenuComponent,
+  },
   {
     path: 'membres/connexion',
     component: ConnexionComponent,
@@ -36,6 +43,14 @@ const routes: Routes = [
   {
     path: 'gestion',
     component: GestionComponent,
+  },
+  {
+    path: 'own-hotels',
+    component: OwnHotelsComponent,
+  },
+  {
+    path: 'add-hotel',
+    component: AddHotelComponent,
   }
 ];
 

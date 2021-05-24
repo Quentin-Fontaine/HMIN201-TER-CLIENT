@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import {AuthService} from '../_services/auth.service';
-import {Router} from '@angular/router';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {BehaviorSubject, Observable, of, Subject, Subscription} from 'rxjs';
+import { AuthService } from '../_services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,14 +9,19 @@ import {Router} from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  public user: Observable<string>;
+  isAuth: BehaviorSubject<boolean> = this.auth.isAuth$;
+  role: string;
+  role$: BehaviorSubject<string> = this.auth.memberRole;
 
-  constructor(private auth: AuthService, private router: Router) {
+  constructor(private auth: AuthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.router.navigate(['/hotels']);
-    console.log(this.auth.isAuth$.getValue());
+    console.log(this.isAuth);
+    console.log(this.role);
+    console.log(this.role$);
   }
 
   onLogout(): void {

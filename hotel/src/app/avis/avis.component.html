@@ -1,1 +1,13 @@
-<p>avis works!</p>
+<div class="my-3">
+
+  <div class="container">
+
+    <h4 class="mb-3">Vos avis</h4>
+    <div *ngFor="let opinion of opinions" class="row py-2 border rounded mb-3 bg-light">
+      <div class="col-4 text-center my-auto">{{ opinion.hotel }}</div>
+      <div class="col-8 border-left border-right">"{{ opinion.text }}"</div>
+    </div>
+
+  </div>
+
+</div>

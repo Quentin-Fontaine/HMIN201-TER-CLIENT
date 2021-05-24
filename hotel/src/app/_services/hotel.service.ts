@@ -31,6 +31,20 @@ export class HotelService {
       });
   }
 
+  getOwnHotels(id: string): void {
+    this.http.get('http://localhost:8888/api/members/' + id + '/hotels')
+      .subscribe(
+        (hotels: Hotel[]) => {
+          if (hotels) {
+            this.hotels = hotels;
+            this.emitHotel();
+          }
+        },
+        (error) => {
+          console.log(error);
+        });
+  }
+
   emitHotel(): void {
     this.hotel$.next(this.hotels);
   }

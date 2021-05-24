@@ -2,53 +2,13 @@
 
   <div class="container">
 
-    <div class="row py-2 border rounded mb-3 bg-light">
-      <div class="col-2 text-center my-auto">Utilisateur 1245</div>
-      <div class="col-6 border-left border-right">"Son avis à lui, qui est peut-être intéressant mais on ne sait pas, mais ça se peux mais bref au pire il dit ce qu'il veut tant que c'est dans le respect."</div>
-      <div class="col-2 w-100 border-right text-center my-auto"><button type="button" class="btn btn-success">Valider</button></div>
-      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger">Supprimer</button></div>
-    </div>
-
-    <div class="row py-2 border rounded mb-3 bg-light">
-      <div class="col-2 text-center my-auto">Utilisateur 1245</div>
-      <div class="col-6 border-left border-right">"Son avis à lui, qui est peut-être intéressant mais on ne sait pas, mais ça se peux mais bref au pire il dit ce qu'il veut tant que c'est dans le respect."</div>
-      <div class="col-2 w-100 border-right text-center my-auto"><button type="button" class="btn btn-success">Valider</button></div>
-      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger">Supprimer</button></div>
-    </div>
-
-    <div class="row py-2 border rounded mb-3 bg-light">
-      <div class="col-2 text-center my-auto">Utilisateur 1245</div>
-      <div class="col-6 border-left border-right">"Son avis à lui, qui est peut-être intéressant mais on ne sait pas, mais ça se peux mais bref au pire il dit ce qu'il veut tant que c'est dans le respect."</div>
-      <div class="col-2 w-100 border-right text-center my-auto"><button type="button" class="btn btn-success">Valider</button></div>
-      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger">Supprimer</button></div>
-    </div>
-
-    <div class="row py-2 border rounded mb-3 bg-light">
-      <div class="col-2 text-center my-auto">Utilisateur 1245</div>
-      <div class="col-6 border-left border-right">"Son avis à lui, qui est peut-être intéressant mais on ne sait pas, mais ça se peux mais bref au pire il dit ce qu'il veut tant que c'est dans le respect."</div>
-      <div class="col-2 w-100 border-right text-center my-auto"><button type="button" class="btn btn-success">Valider</button></div>
-      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger">Supprimer</button></div>
-    </div>
-
-    <div class="row py-2 border rounded mb-3 bg-light">
-      <div class="col-2 text-center my-auto">Utilisateur 1245</div>
-      <div class="col-6 border-left border-right">"Son avis à lui, qui est peut-être intéressant mais on ne sait pas, mais ça se peux mais bref au pire il dit ce qu'il veut tant que c'est dans le respect."</div>
-      <div class="col-2 w-100 border-right text-center my-auto"><button type="button" class="btn btn-success">Valider</button></div>
-      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger">Supprimer</button></div>
-    </div>
-
-    <div class="row py-2 border rounded mb-3 bg-light">
-      <div class="col-2 text-center my-auto">Utilisateur 1245</div>
-      <div class="col-6 border-left border-right">"Son avis à lui, qui est peut-être intéressant mais on ne sait pas, mais ça se peux mais bref au pire il dit ce qu'il veut tant que c'est dans le respect."</div>
-      <div class="col-2 w-100 border-right text-center my-auto"><button type="button" class="btn btn-success">Valider</button></div>
-      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger">Supprimer</button></div>
-    </div>
-
-    <div class="row py-2 border rounded mb-3 bg-light">
-      <div class="col-2 text-center my-auto">Utilisateur 1245</div>
-      <div class="col-6 border-left border-right">"Son avis à lui, qui est peut-être intéressant mais on ne sait pas, mais ça se peux mais bref au pire il dit ce qu'il veut tant que c'est dans le respect."</div>
-      <div class="col-2 w-100 border-right text-center my-auto"><button type="button" class="btn btn-success">Valider</button></div>
-      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger">Supprimer</button></div>
+    <div *ngFor="let opinion of opinions" class="row py-2 border rounded mb-3 bg-light">
+      <div class="col-3 text-center my-auto">{{ opinion.writer }}</div>
+      <div class="col-5 border-left border-right">"{{ opinion.text }}"</div>
+      <div class="col-2 w-100 border-right text-center my-auto">
+        <button type="button" class="btn btn-success" (click)="valideOpinion(opinion)">Valider</button>
+      </div>
+      <div class="col-2 w-100 text-center my-auto"><button class="btn btn-danger" (click)="deleteOpinion(opinion)">Supprimer</button></div>
     </div>
 
   </div>

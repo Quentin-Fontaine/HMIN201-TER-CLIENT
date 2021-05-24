@@ -13,12 +13,10 @@ import { switchMap } from 'rxjs/operators';
 export class HotelsComponent implements OnInit, OnDestroy {
 
   public hotels: Hotel[] = [];
-  // public id: string;
   private hotelSub: Subscription;
 
   constructor(private hotelService: HotelService,
-              private router: Router,
-              private route: ActivatedRoute) {}
+              private router: Router) {}
 
   ngOnInit(): void {
     this.hotelSub = this.hotelService.hotel$.subscribe(

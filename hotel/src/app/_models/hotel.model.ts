@@ -6,5 +6,5 @@ export class Hotel {
   zip: string;
   city: string;
   country: string;
-  ownerId: string;
+  owner: string;
 }

@@ -14,8 +14,7 @@ export class MembresComponent implements OnInit, OnDestroy {
   public members: Member[] = [];
   private memberSub: Subscription;
 
-  constructor(private memberService: MemberService,
-              private router: Router) { }
+  constructor(private memberService: MemberService) { }
 
   ngOnInit(): void {
     this.memberSub = this.memberService.member$.subscribe(

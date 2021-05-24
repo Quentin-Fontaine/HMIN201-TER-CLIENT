@@ -64,6 +64,7 @@ export class HotelComponent implements OnInit {
   onSubmit(): void {
     const opinion = new Opinion();
     opinion.text = this.opinionForm.get('text').value;
+    opinion.isValidated = false;
     opinion.writer = this.auth.memberId;
     opinion.hotel = this.hotel._id;
     console.log(opinion);
